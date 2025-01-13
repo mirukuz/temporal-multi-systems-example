@@ -1,0 +1,18 @@
+{
+  "name": "temporal-ts-service",
+  "version": "1.0.0",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "tsc",
+    "start-client": "node build/client.js",
+    "start-worker": "node build/worker.js"
+  },
+  "dependencies": {
+    "@temporalio/client": "^1.0.0",
+    "@temporalio/worker": "^1.0.0",
+    "axios": "^0.21.0"
+  },
+  "devDependencies": {
+    "typescript": "^4.0.0"
+  }
+}

@@ -4,6 +4,7 @@
         "module": "commonjs",
         "strict": true,
         "esModuleInterop": true,
+        "skipLibCheck": true,
         "outDir": "build", // Output directory where compiled JS files should go
         "rootDir": "src" // Root directory of TypeScript files
     },

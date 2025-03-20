@@ -10,7 +10,8 @@
   "dependencies": {
     "@temporalio/client": "^1.0.0",
     "@temporalio/worker": "^1.0.0",
-    "axios": "^0.21.0"
+    "axios": "^0.21.0",
+    "concurrently": "^8.2.2"
   },
   "devDependencies": {
     "typescript": "^4.0.0"

@@ -6,12 +6,15 @@ graph LR
 ```
 
 This project demonstrates the use of Temporal for orchestrating workflows and activities in TypeScript. It simulates an order processing system that involves checking inventory, processing payments, and sending notifications. Temporal is a powerful platform designed to handle complex, reliable workflows across distributed systems, enabling developers to build resilient applications with ease.
-## Install dependencies
-```
-npm install
-```
 
-in each sub repo
+## Prerequisites
+- Node.js v22.14.0 (specified in `.nvmrc`)
+
+## Install dependencies
+```bash
+# Install dependencies for all services
+npm run install:all
+```
 
 ## Start Server
 You can install the latest version with Homebrew using the following command:
@@ -32,31 +35,42 @@ The Temporal Service will be available on localhost:7233.
 The Temporal Web UI will be available at http://localhost:8233.
 
 
-## Start Each Microservice
-Run each service in their respective directories to ensure they are operational:
+## Start Services
+You can start all services (inventory, payment, notification, and temporal) in parallel using:
 
+```bash
+npm start
 ```
-node inventory-service/index.js
-node payment-service/index.js
-node notification-service/index.js
+
+Or start individual services using:
+
+```bash
+# Start inventory service only
+npm run start:inventory
+
+# Start payment service only
+npm run start:payment
+
+# Start notification service only
+npm run start:notification
 ```
+
 ## Build the Temporal service
 
 ```
-cd temporal-service
-npm run build
+npm run build:temporal
 ```
 
 ## Run Temporal Worker:
 Start the Temporal worker to listen for workflow executions:
 
 ```
-npm run start-worker
+npm run start:temporal-worker
 ```
 
 ## Trigger Workflow Execution:
 Execute the order processing workflow:
 
 ```
-npm run start-client
+npm run start:temporal-client
 ```

@@ -1,0 +1,25 @@
+{
+  "name": "temporal-multi-systems",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "inventory-service",
+    "notification-service",
+    "payment-service",
+    "temporal-service"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run install:workspaces",
+    "install:workspaces": "npm install -ws",
+    "start": "concurrently \"npm run start:inventory\" \"npm run start:payment\" \"npm run start:notification\"",
+    "start:inventory": "npm start --workspace=inventory-service",
+    "start:payment": "npm start --workspace=payment-service",
+    "start:notification": "npm start --workspace=notification-service",
+    "build:temporal": "npm run build --workspace=temporal-service",
+    "start:temporal-worker": "npm run start-worker --workspace=temporal-service",
+    "start:temporal-client": "npm run start-client --workspace=temporal-service"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
